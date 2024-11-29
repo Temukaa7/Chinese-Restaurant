@@ -1,0 +1,93 @@
+
+<div class="adgili">
+<img class="img5" src="https://blogger.googleusercontent.com/img/a/AVvXsEhzq09e92T3wDkAGP4XMvcNT_PMLWJy_X2UotH1MioRBRN-N9l_ID7zArFluH1syFw5JINIyRMdoeqYyfXorZRq0bTls0Ie5t5ZHCoq3b4n-27ZoqJuQvhmyjrhErjtvDUX3_ZSYSa-HfpzURlUGuKYlGi_uEbngoY44J0HVbIBVYx3938GKdi_O9AMTQ" alt="" srcset="">
+<img class="img1" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEghuJ7sfMefiz9mlfsQOECCQwUxqJvdntkpQTWsr92dse7IinZy-7uS1tJ1grXIQbbCxJHXpWbZtDSw7ZRyA1Hln1fpRo6nqbcFAx5dt__iXuUgAhOSTrSsCEz2OOdSrFOCFLF_IbEL5bk/s1600/chinese_character_qi_energy.jpg" alt="" srcset="">
+<img class="img2" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhnC9h4ZYGgqIPc2Avg2t01n6xgloc8g285lsFBh41P85dI957-8lBQ8yyfQYVpax5jPA3Kr4JXS75aDm_J2zINxJeVSALwvCtdFoLFS33yygIJgNvqXw5_PyKZCJa6aj2DOITbe3R8p7c/s1600/chinese_character_cheng_honest.jpg" alt="" srcset="">
+<img class="img3" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiTePCOJ9Pqw3TI4keq8MQ22u30eGTM77MhC2-CeyIsATgNNZiIvQtvwedMumT2WeNhre0VeUet434pTjT1BUCfbzRA0Mj2jsSa3hljCaJ1_ni-_Wl8SS5ZP9NZVB7v4C9bkbbdXpebSMM/s1600/chinese_character_nan_south.jpg" alt="" srcset="">
+<img class="img4" src="https://www2.shutterstock.com/blog/wp-content/uploads/sites/5/2013/10/chinese5_131010305.jpg" alt="" srcset="">
+
+</div>
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/home">Home</a>
+        </li>
+        <ul class="itemsall">
+        <li (click)="showByCategory(item.id)" *ngFor="let item of categoryList">{{item.name}}</li>
+        </ul>
+        <li class="nav-item">
+          <i class="fa-solid fa-cart-shopping" routerLink="/cart"></i>
+          <p>cart</p>
+         </li>
+
+
+<main class="alo123">
+  <div class="inputBox">
+    <label for="">Spicy</label>
+    <input type="range" min="-1" max="4" step="1"  [(ngModel)]="sicxare">
+  </div>
+  <div class="inputBox">
+    <label for="">Nuts</label>
+    <input type="checkbox" [(ngModel)]="txili">
+  </div>
+  <div class="inputBox">
+    <label for="">Vegetarian</label>
+    <input type="checkbox"[(ngModel)]="vegetarianuli" >
+  </div>
+  <button class="button1" (click)="filterFoods()">Filter</button>
+</main>
+
+      </ul>
+      
+    </div>
+  </div>
+  
+</nav>
+
+
+
+
+
+
+<section *ngIf="foodList.length > 0">
+    <div *ngFor="let food of foodList" class="card" style="width: 18rem;">
+        <img [src]="food.image" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{food.name}}</h5>
+          <p class="colour">Price: {{food.price}}$</p>
+          <h5>Nuts: <i [ngStyle]="{'color': food.nuts? 'green' : 'red'}" class="fa-solid fa-{{food.nuts ? 'check' : 'x'}}"></i></h5>
+          <h5>vegeterian: <i [ngStyle]="{'color': food.vegeterian? 'green' : 'red'}" class="fa-solid fa-{{food.vegeterian ? 'check' : 'x'}}"></i></h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a (click)="addToCart(food.id, food.price)" class="btn btn-primary">Add to cart</a>
+        </div>
+      </div>
+</section>
+
+<div *ngIf="foodList.length == 0">
+  <img src="https://i.pinimg.com/736x/e5/55/87/e55587d66eb7b637fc19ff959a6b04ab.jpg" alt="">
+  <h1>no products found...</h1>
+</div>
+
+
+<footer class="bg-dark py-5 mt-5">
+<div class="container text-light text- center">
+  <p class="display-5 mb-3">Chinesee</p>
+  <small class="text-white-50 text-center">&copy; Copyright by Me. All right reserved.</small>
+</div>
+
+<div class="icons">
+<i class="fa-brands fa-facebook"></i>
+<i class="fa-brands fa-instagram"></i>
+<i class="fa-brands fa-linkedin"></i>
+<p>Lorem ipsum dolor sit amet consectetur.</p>
+</div>
+<iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d11911.580617564276!2d44.72808761279244!3d41.72278121568919!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sitstep%20academy!5e0!3m2!1sen!2sge!4v1717072629581!5m2!1sen!2sge" width="250" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+
+</footer>

@@ -1,0 +1,47 @@
+
+
+
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th colspan="2" scope="col">Product</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Price</th>
+        <th scope="col">Total</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of cartList">
+        <th scope="row">{{item.product.id}}</th>
+        <td><img width="70" [src]="item.product.image" alt=""></td>
+        <td>{{item.product.name}}</td>
+        <td>{{item.quantity}}</td>
+        <td>{{item.product.price |currency}}</td>
+        <td>{{(item.quantity * item.product.price) | currency}}</td>
+        <td><button (click)="deleteMyFood(item.product.id)">X</button></td>
+      </tr>
+     
+    </tbody>
+      
+  </table>
+
+
+  <footer class="bg-dark py-5 mt-5">
+    <div class="container text-light text- center">
+      <p class="display-5 mb-3">Chinesee</p>
+      <small class="text-white-50 text-center">&copy; Copyright by Me. All right reserved.</small>
+    </div>
+    
+    <div class="icons">
+    <i class="fa-brands fa-facebook"></i>
+    <i class="fa-brands fa-instagram"></i>
+    <i class="fa-brands fa-linkedin"></i>
+    <p>Lorem ipsum dolor sit amet consectetur.</p>
+    </div>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d11911.580617564276!2d44.72808761279244!3d41.72278121568919!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sitstep%20academy!5e0!3m2!1sen!2sge!4v1717072629581!5m2!1sen!2sge" width="250" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    
+    
+    </footer>
